@@ -8,7 +8,6 @@ import output as ui_out
 
 
 def draw_menu(stdscr, options, title="MENU"):
-    """Helper to draw a selection menu"""
     stdscr.clear()
     stdscr.addstr(0, 0, f"=== {title} ===", curses.A_BOLD)
     
@@ -36,7 +35,6 @@ def list_gpa_ui(stdscr, manager):
     stdscr.getch()
 
 def compress_files(method_name):
-    """Compresses .txt files into students.dat"""
     files_to_compress = ['students.txt', 'courses.txt', 'marks.txt']
 
     existing_files = [f for f in files_to_compress if os.path.exists(f)]
@@ -51,7 +49,6 @@ def compress_files(method_name):
             os.remove(file)
 
 def decompress_data():
-    """Extracts students.dat if it exists"""
     if os.path.exists('students.dat'):
         with zipfile.ZipFile('students.dat', 'r') as zipf:
             zipf.extractall()

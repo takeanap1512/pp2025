@@ -8,7 +8,6 @@ from domains.models import Student, Course
 FILE_NAME = "students.dat"
 
 def save_data(manager):
-    """Saves the manager object to a compressed binary file."""
     try:
         with gzip.open(FILE_NAME, "wb") as f:
             pickle.dump(manager, f)
@@ -17,7 +16,6 @@ def save_data(manager):
         pass
 
 def load_data():
-    """Loads the manager object from a compressed binary file."""
     if os.path.exists(FILE_NAME):
         try:
             with gzip.open(FILE_NAME, "rb") as f:

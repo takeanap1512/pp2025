@@ -33,18 +33,6 @@ class Character:
         self.name = name
         self.level = level
         self.health = health
-    def getName(self):
-        return self.name
-    def setName(self,name):
-        self.name = name
-    def getLevel(self):
-        return self.level
-    def setLevel(self,level):
-        self.level = level
-    def getHealth(self):
-        return self.health
-    def setHealth(self,health):
-        self.health = health
 c1 = Character("Stone Giant", 1, 780)
 class PlayerCharacter(Character):
     def __init__(self,name,level,health,inventory):
